@@ -1,0 +1,43 @@
+import java.util.*;
+class HashTable
+{
+  public static void main (String[]args)
+  {
+    Hashtable < Integer, Integer > h = new Hashtable < Integer, Integer > ();
+    Scanner sc = new Scanner (System.in);
+      System.out.println ("ENTER SIZE:");
+    int n = sc.nextInt ();
+      System.out.println ("ENTER THE ELEMENTS:");
+    for (int i = 1; i < n; i++)
+      {
+	int key = sc.nextInt ();
+	int value = sc.nextInt ();
+	  h.put (key, value);
+      }
+    System.out.println ("ENTER KEY:");
+    int j = sc.nextInt ();
+    int y = sc.nextInt ();
+    if (h.containsKey (j))
+      {
+	y = h.get (j) + 5000;
+	h.put (j, y);
+	System.out.println (h);
+      }
+    else
+      System.out.println ("	NOT FOUND");
+  }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+OUTPUT:
+C:\Users\hp>javac HashTable.java
+C:\Users\hp>java HashTable
+ENTER SIZE:
+5
+ENTER THE ELEMENTS:
+101 50000
+102 45000
+103 35000
+104 40000
+ENTER KEY:
+103
+{104=40000, 103=40000, 102=45000, 101=50000}
